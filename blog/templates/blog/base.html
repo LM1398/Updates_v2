@@ -13,12 +13,12 @@
 <body>
     <div class="page-header">
         {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}" class="top-menu">{% include './icons/person-x-fill.svg' %}</a>
         <a href="{% url 'post_new' %}" class="top-menu">{% include './icons/plus-square-dotted.svg' %}
             <a href="{% url 'post_draft_list' %}" class="top-menu">{% include './icons/list-check.svg' %}
-                <a href="{% url 'logout' %}" class="top-menu">{% include './icons/person-x-fill.svg' %}</a>
-                <p class="top-menu"><small>Hi {{ user.username }} </small></p>
+                <a class="top-menu"><small>Welcome {{ user.username }} </small></a>
                 {% else %}
-                <a href="{% url 'login' %}" class="top-menu">{% include './icons/person-square.svg' %}</a>
+                <a href="{% url 'login' %}" class="top-menu">{% include './icons/person-plus-fill.svg' %}</a>
                 {% endif %}
                 <h1><a href="/">Daily Programming Updates</a></h1>
     </div>
