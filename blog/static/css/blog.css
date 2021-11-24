@@ -83,3 +83,25 @@ h4 {
     margin: 2px
     
 }
+
+.comment {
+    margin: 20px 20px 20px 20px;
+}
+
+.main_comments {
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+}
+
+.main_author {
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+}
+
+p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+    margin-top: 10px;
+}
