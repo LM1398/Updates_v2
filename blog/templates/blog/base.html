@@ -16,7 +16,7 @@
         <a href="{% url 'logout' %}" class="top-menu">{% include './icons/person-x-fill.svg' %}</a>
         <a href="{% url 'post_new' %}" class="top-menu">{% include './icons/plus-square-dotted.svg' %}
             <a href="{% url 'post_draft_list' %}" class="top-menu">{% include './icons/list-check.svg' %}
-                <a class="top-menu"><small>Welcome {{ user.username }} </small></a>
+                <a href="/admin" class="top-menu"><small>Welcome {{ user.username }} </small></a>
                 {% else %}
                 <a href="{% url 'login' %}" class="top-menu">{% include './icons/person-plus-fill.svg' %}</a>
                 {% endif %}
