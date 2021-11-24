@@ -18,7 +18,7 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: 'Lobster', cursive;
+    font-family: "Times New Roman", Times, serif;
 }
 
 .date {
@@ -43,7 +43,6 @@ h4 {
     font-size: 14pt;
     margin-right: 20px;
     margin-bottom: 40px;
-
 }
 
 .post {
@@ -52,6 +51,11 @@ h4 {
 
 .post h2 a,
 .post h2 a:visited {
+    color: #000000;
+}
+
+.post h1 a,
+.post h1 a:visited {
     color: #000000;
 }
 
@@ -78,3 +82,4 @@ h4 {
     float: right;
     margin: 2px
     
+}
