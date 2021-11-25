@@ -42,6 +42,7 @@ h4 {
     font-family: "Times New Roman", Times, serif;
     font-size: 14pt;
     margin-right: 20px;
+    margin-bottom: 40px;
 }
 
 .post {
@@ -81,4 +82,33 @@ h4 {
     float: right;
     margin: 2px
     
+}
+
+.comment {
+    margin: 20px 20px 20px 20px;
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+}
+
+.main_comments {
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+}
+
+.main_author {
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+}
+
+p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+    margin-top: 10px;
+}
+
+.date {
+    float: right;
 }

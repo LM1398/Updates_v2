@@ -26,7 +26,14 @@ SECRET_KEY = "django-insecure-+v@&1kbv=(s^@-&q4(9j2(wa6m6&bl^0h6kgj78803xlb5t*p9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", ".pythonanywhere.com", "www.programmingupdates.com"]
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    ".pythonanywhere.com",
+    "www.programmingupdates.com",
+    "0.20211125t190750.programming-updates.an.r.appspot.com",
+    ".programming-updates.an.r.appspot.com",
+    "*",
+]
 
 
 # Application definition
@@ -75,16 +82,36 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "updates",
-        "USER": "leo",
-        "PASSWORD": "",
-        "HOST": "localhost",
-        "PORT": "5432",
+
+# [START db_setup]
+if os.getenv("GAE_APPLICATION", None):
+    # Running on production App Engine, so connect to Google Cloud SQL using
+    # the unix socket at /cloudsql/<your-cloudsql-connection string>
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "HOST": "/cloudsql/programming-updates:asia-northeast1:updates",
+            "USER": "leo",
+            "PASSWORD": "Study@2021",
+            "NAME": "updates-database",
+        }
     }
-}
+else:
+    # Running locally so connect to either a local MySQL instance or connect
+    # to Cloud SQL via the proxy.  To start the proxy via command line:
+    #    $ cloud_sql_proxy -instances=[INSTANCE_CONNECTION_NAME]=tcp:3306
+    # See https://cloud.google.com/sql/docs/mysql-connect-proxy
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "updates",
+            "USER": "leo",
+            "PASSWORD": "",
+            "HOST": "localhost",
+            "PORT": "5432",
+        }
+    }
+# [END db_setup]
 
 
 # Password validation
