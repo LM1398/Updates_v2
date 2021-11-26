@@ -92,7 +92,7 @@ if os.getenv("GAE_APPLICATION", None):
             "ENGINE": "django.db.backends.postgresql",
             "HOST": "/cloudsql/programming-updates:asia-northeast1:updates",
             "USER": "leo",
-            "PASSWORD": "Study@2021",
+            "PASSWORD": "123",
             "NAME": "updates-database",
         }
     }
@@ -108,7 +108,7 @@ else:
             "USER": "leo",
             "PASSWORD": "",
             "HOST": "localhost",
-            "PORT": "5432",
+            "PORT": "",
         }
     }
 # [END db_setup]
