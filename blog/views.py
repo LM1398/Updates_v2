@@ -39,11 +39,12 @@ def post_edit(request, pk):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
+            post.published_date = timezone.now()
             post.save()
             return redirect("post_detail", pk=post.pk)
     else:
         form = PostForm(instance=post)
-    return render(request, "blog/post_edit.html", {"forms": form})
+    return render(request, "blog/post_edit.html", {"form": form})
 
 
 @login_required
