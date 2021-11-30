@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-+v@&1kbv=(s^@-&q4(9j2(wa6m6&bl^0h6kgj78803xlb5t*p9"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "blog.apps.BlogConfig",
+    "ckeditor",
 ]
 
 MIDDLEWARE = [
@@ -152,6 +153,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
+CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -159,3 +161,59 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_REDIRECT_URL = "/"
+
+CKEDITOR_CONFIGS = {
+    "Basic": {
+        "toolbar": "CUSTOM_TOOLBAR",
+    },
+}
+
+CUSTOM_TOOLBAR = [
+    {
+        "name": "document",
+        "items": [
+            "Styles",
+            "Format",
+            "Bold",
+            "Italic",
+            "Underline",
+            "Strike",
+            "-",
+            "TextColor",
+            "BGColor",
+            "-",
+            "JustifyLeft",
+            "JustifyCenter",
+            "JustifyRight",
+            "JustifyBlock",
+        ],
+    },
+    {
+        "name": "widgets",
+        "items": [
+            "Undo",
+            "Redo",
+            "-",
+            "NumberedList",
+            "BulletedList",
+            "-",
+            "Outdent",
+            "Indent",
+            "-",
+            "Link",
+            "Unlink",
+            "-",
+            "Image",
+            "CodeSnippet",
+            "Table",
+            "HorizontalRule",
+            "Smiley",
+            "SpecialChar",
+            "-",
+            "Blockquote",
+            "-",
+            "ShowBlocks",
+            "Maximize",
+        ],
+    },
+]
