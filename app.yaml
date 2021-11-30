@@ -16,9 +16,9 @@
 
 # [START django_app]
 # [START gaestd_py_django_app_yaml]
-runtime: python37
+runtime: python38
 beta_settings:
-  cloud_sql_instances: programming-updates:asia-northeast1:updates
+  cloud_sql_instances: updates-programming-v2:asia-northeast1:blogs-instance
 handlers:
 # This configures Google App Engine to serve the files in the app's static
 # directory.

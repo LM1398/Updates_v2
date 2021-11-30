@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-+v@&1kbv=(s^@-&q4(9j2(wa6m6&bl^0h6kgj78803xlb5t*p9"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
@@ -90,10 +90,10 @@ if os.getenv("GAE_APPLICATION", None):
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
-            "HOST": "/cloudsql/programming-updates:asia-northeast1:updates",
+            "HOST": "/cloudsql/updates-programming-v2:asia-northeast1:blogs-instance",
             "USER": "leo",
             "PASSWORD": "123",
-            "NAME": "updates-database",
+            "NAME": "blogs-database",
         }
     }
 else:
@@ -104,11 +104,11 @@ else:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
-            "NAME": "updates",
+            "NAME": "blogs-database",
             "USER": "leo",
-            "PASSWORD": "",
-            "HOST": "localhost",
-            "PORT": "",
+            "PASSWORD": "123",
+            "HOST": "127.0.0.1",
+            "PORT": "5342",
         }
     }
 # [END db_setup]
